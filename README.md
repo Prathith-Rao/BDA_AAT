@@ -1,12 +1,12 @@
 <TEXT>` collections to map flexible vehicle amenities (WiFi, Dashcam, SUV) without expensive relational `JOIN` operations.
 * **Data Portability:** Pipeline for operational data archival via `COPY TO/FROM` CSV operations.
 
-## 📂 Project Structure
+## Project Structure
 * `generate_fleet_data.py`: A Python data-generator that synthesises a realistic, collision-free dataset of 50 vehicles and 500+ time-stamped rides.
 * `massive_fleet_dataset.cql`: The generated Cassandra Query Language script containing the keyspace definition, schema, and bulk insertion queries.
 * `analysis_queries.cql`: A curated set of queries used to extract business intelligence (High-Value Targeting, Commuter Exhaust, Fleet Segmentation).
 
-## 🛠️ Setup & Execution
+## Setup & Execution
 
 ### Prerequisites
 * [Docker](https://www.docker.com/) (to run the Cassandra cluster)
@@ -32,7 +32,7 @@ docker cp massive_fleet_dataset.cql cass-lab:/massive_fleet_dataset.cql
 docker exec -it cass-lab cqlsh -f /massive_fleet_dataset.cql
 ```
 
-## 📊 Analytical Insights Extraction
+## Analytical Insights Extraction
 Once the data is loaded, you can drop into the Cassandra shell to perform analytics:
 ```bash
 docker exec -it cass-lab cqlsh
@@ -61,7 +61,7 @@ WHERE zone_id = 'Koramangala'
   AND ride_time <= '2026-05-12T23:59:59.000+0000';
 ```
 
-## 📝 License
+## License
 This project is open-source and available under the [MIT License](LICENSE).
 ```
 
@@ -82,7 +82,7 @@ An end-to-end Big Data analytics pipeline built on **Apache Cassandra**. This pr
 
 *This project was originally developed as an Alternate Assessment Tool (AAT) for the Big Data Analytics curriculum at Visvesvaraya Technological University (VTU).*
 
-## 🚀 Key Features Demonstrated
+## Key Features Demonstrated
 This project implements several advanced NoSQL wide-column database mechanics:
 * **Time-Series Data Modeling:** Optimised partition keys (`zone_id`) and clustering keys (`ride_time DESC`) for O(1) latency traffic burst analytics.
 * **Auto-Expiring Data (TTL):** "Surge Pricing" multipliers that automatically vanish server-side after 30–120 minutes without background application jobs.
@@ -90,12 +90,12 @@ This project implements several advanced NoSQL wide-column database mechanics:
 * **Dynamic Inventory (Collections):** Utilisation of Cassandra `LIST<TEXT>` collections to map flexible vehicle amenities (WiFi, Dashcam, SUV) without expensive relational `JOIN` operations.
 * **Data Portability:** Pipeline for operational data archival via `COPY TO/FROM` CSV operations.
 
-## 📂 Project Structure
+## Project Structure
 * `generate_fleet_data.py`: A Python data-generator that synthesises a realistic, collision-free dataset of 50 vehicles and 500+ time-stamped rides.
 * `massive_fleet_dataset.cql`: The generated Cassandra Query Language script containing the keyspace definition, schema, and bulk insertion queries.
 * `analysis_queries.cql`: A curated set of queries used to extract business intelligence (High-Value Targeting, Commuter Exhaust, Fleet Segmentation).
 
-## 🛠️ Setup & Execution
+## Setup & Execution
 
 ### Prerequisites
 * [Docker](https://www.docker.com/) (to run the Cassandra cluster)
@@ -121,7 +121,7 @@ docker cp massive_fleet_dataset.cql cass-lab:/massive_fleet_dataset.cql
 docker exec -it cass-lab cqlsh -f /massive_fleet_dataset.cql
 ```
 
-## 📊 Analytical Insights Extraction
+## Analytical Insights Extraction
 Once the data is loaded, you can drop into the Cassandra shell to perform analytics:
 ```bash
 docker exec -it cass-lab cqlsh
@@ -150,7 +150,7 @@ WHERE zone_id = 'Koramangala'
   AND ride_time <= '2026-05-12T23:59:59.000+0000';
 ```
 
-## 📝 License
+## License
 This project is open-source and available under the [MIT License](LICENSE).
 ```
 
