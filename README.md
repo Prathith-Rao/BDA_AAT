@@ -60,11 +60,6 @@ WHERE zone_id = 'Koramangala'
   AND ride_time <= '2026-05-12T23:59:59.000+0000';
 ```
 
-## License
-This project is open-source and available under the [MIT License](LICENSE).
-```
-
-```
 ***
 ```markdown
 # RapidRide: Urban Ride-Sharing Fleet Analytics
@@ -148,7 +143,5 @@ WHERE zone_id = 'Koramangala'
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
 ```
-
-### **A quick tip for GitHub:**
-If you want to go the extra mile, upload one or two of the screenshots you took for your report into a folder called `/images` in your repo, and add them to the README. It makes the repository look incredibly polished to anyone viewing your profile!
+Use however the F you want i dont care
 ```</TEXT></TEXT>
