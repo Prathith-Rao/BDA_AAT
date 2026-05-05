@@ -3,7 +3,6 @@
 ## Project Structure
 * `generate_fleet_data.py`: A Python data-generator that synthesises a realistic, collision-free dataset of 50 vehicles and 500+ time-stamped rides.
 * `massive_fleet_dataset.cql`: The generated Cassandra Query Language script containing the keyspace definition, schema, and bulk insertion queries.
-* `analysis_queries.cql`: A curated set of queries used to extract business intelligence (High-Value Targeting, Commuter Exhaust, Fleet Segmentation).
 
 ## Setup & Execution
 
