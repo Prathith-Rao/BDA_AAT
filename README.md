@@ -1,5 +1,4 @@
-<TEXT>` collections to map flexible vehicle amenities (WiFi, Dashcam, SUV) without expensive relational `JOIN` operations.
-* **Data Portability:** Pipeline for operational data archival via `COPY TO/FROM` CSV operations.
+# RapidRide: Urban Ride-Sharing Fleet Analytics
 
 ## Project Structure
 * `generate_fleet_data.py`: A Python data-generator that synthesises a realistic, collision-free dataset of 50 vehicles and 500+ time-stamped rides.
@@ -65,11 +64,7 @@ WHERE zone_id = 'Koramangala'
 This project is open-source and available under the [MIT License](LICENSE).
 ```
 
-### **A quick tip for GitHub:**
-If you want to go the extra mile, upload one or two of the screenshots you took forCongratulations on completing the project! A strong, well-documented GitHub repository is one of the best ways to showcase your Big Data skills to future recruiters or professors. 
-
-Here is a professional, complete `README.md` template tailored exactly to the RapidRide project we just built. You can copy and paste this directly into your repository.
-
+```
 ***
 ```markdown
 # RapidRide: Urban Ride-Sharing Fleet Analytics
