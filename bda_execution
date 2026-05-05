@@ -1,0 +1,476 @@
+prathith_rao@Prathith:~$ docker exec -it cass-lab cqlsh
+
+ATTENTION: All commands will be saved to history file: /root/.cassandra/cqlsh_history
+This may include sensitive information such as passwords.
+To disable history, use --disable-history or set 'disabled = true' in the [history] section of cqlshrc.
+See https://cassandra.apache.org/doc/latest/tools/cqlsh.html for more information.
+
+Connected to Test Cluster at 127.0.0.1:9042
+[cqlsh 6.1.0 | Cassandra 4.1.11 | CQL spec 3.4.6 | Native protocol v5]
+Use HELP for help.
+cqlsh> exit
+prathith_rao@Prathith:~$ docker cp "/mnt/c/Users/Prathith Rao/Downloads/flashsale_dataset.cql" cass-lab:/flashsale_dataset.cql
+Successfully copied 155kB (transferred 157kB) to cass-lab:/flashsale_dataset.cql
+prathith_rao@Prathith:~$ docker exec -it cass-lab cqlsh -f /flashsale_dataset.cql
+/flashsale_dataset.cql:70:Invalid syntax at line 2, char 123
+/flashsale_dataset.cql:70:  INSERT INTO Products (product_id, name, category, price, stock_qty, tags) VALUES (d446818f-568d-4e31-93f4-f242832a2dac, 'H&M Oversized Tee', 'Clothing', 999, 191, ['casual', 'unisex', 'cotton']);
+/flashsale_dataset.cql:70:                                                                                                                            ^
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 14 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 14 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 16 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 19 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 16 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 15 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 20 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 15 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 16 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 16 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 14 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 18 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 15 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 15 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+ count
+-------
+    18
+
+(1 rows)
+
+Warnings :
+Aggregation query used without partition key
+
+
+ count
+-------
+   500
+
+(1 rows)
+
+Warnings :
+Aggregation query used without partition key
+
+
+ code     | discount_pct | valid_for   | seconds_remaining
+----------+--------------+-------------+-------------------
+  FLASH10 |           10 | Electronics |              3599
+ BEAUTY10 |           10 |      Beauty |              5399
+   DEAL15 |           15 |    Footwear |              7199
+   BOOK50 |           50 |       Books |              3599
+   SAVE20 |           20 |    Clothing |              3599
+    TOY20 |           20 |        Toys |              3599
+   MEGA30 |           30 |         All |              3599
+  EXTRA25 |           25 |  Appliances |              1799
+
+(8 rows)
+
+ customer_id | total_orders
+-------------+--------------
+        C017 |            6
+        C031 |            6
+        C009 |            8
+        C038 |            8
+        C028 |           12
+        C022 |           11
+        C004 |           11
+        C037 |            9
+        C035 |            7
+        C046 |            6
+
+(10 rows)
+
+ customer_id | order_time                      | amount
+-------------+---------------------------------+--------
+        C001 | 2025-08-15 12:58:47.000000+0000 |   3598
+        C001 | 2025-08-15 12:52:19.000000+0000 | 194997
+        C001 | 2025-08-15 12:42:09.000000+0000 |  13998
+        C001 | 2025-08-15 12:34:38.000000+0000 |  12999
+        C001 | 2025-08-15 12:33:44.000000+0000 |   1197
+        C001 | 2025-08-15 11:52:50.000000+0000 |   2998
+        C001 | 2025-08-15 11:14:54.000000+0000 |   1499
+        C001 | 2025-08-15 11:09:53.000000+0000 |  64999
+        C001 | 2025-08-15 10:53:48.000000+0000 |  14997
+        C001 | 2025-08-15 10:33:44.000000+0000 |  11997
+
+(10 rows)
+
+ name               | price | stock_qty | tags
+--------------------+-------+-----------+--------------------------------------------------------------------------
+    Apple iPhone 15 | 89999 |        91 |          ['smartphone', 'premium', 'ios', 'flash-deal', 'limited-stock']
+   boAt Rockerz 450 |  1799 |       113 |                                          ['audio', 'wireless', 'budget']
+    Sony WH-1000XM5 | 29999 |       182 |      ['audio', 'noise-cancel', 'premium', 'flash-deal', 'limited-stock']
+         OnePlus 12 | 64999 |       136 | ['smartphone', 'flagship', 'fast-charge', 'flash-deal', 'limited-stock']
+ Samsung Galaxy S24 | 79900 |       117 |        ['smartphone', 'bestseller', '5g', 'flash-deal', 'limited-stock']
+
+(5 rows)
+
+ name                         | tags
+------------------------------+--------------------------------------------------------------------------
+              Apple iPhone 15 |          ['smartphone', 'premium', 'ios', 'flash-deal', 'limited-stock']
+             boAt Rockerz 450 |                                          ['audio', 'wireless', 'budget']
+                    Puma RS-X |                                            ['casual', 'colorful', 'men']
+            Zara Floral Dress |                                            ['women', 'summer', 'floral']
+               Nerf Elite 2.0 |                                       ['kids', 'outdoor', 'ages-8-plus']
+             LEGO Technic Set |                                             ['kids', 'stem', 'building']
+              Sony WH-1000XM5 |      ['audio', 'noise-cancel', 'premium', 'flash-deal', 'limited-stock']
+                   OnePlus 12 | ['smartphone', 'flagship', 'fast-charge', 'flash-deal', 'limited-stock']
+           Samsung Galaxy S24 |        ['smartphone', 'bestseller', '5g', 'flash-deal', 'limited-stock']
+  Samsung 8kg Washing Machine |                                      ['home', 'inverter', 'energy-star']
+             Nike Air Max 270 |                                            ['sports', 'trending', 'men']
+         Harry Potter Box Set |                                    ['fiction', 'fantasy', 'collectible']
+        Nivea Men Body Lotion |                                             ['skincare', 'men', 'daily']
+         Adidas Ultraboost 23 |                                         ['running', 'premium', 'unisex']
+ Maybelline Fit Me Foundation |                                          ['makeup', 'women', 'all-skin']
+         Atomic Habits (Book) |                                 ['self-help', 'bestseller', 'paperback']
+            Philips Air Fryer |                                        ['kitchen', 'healthy', 'compact']
+           LG 43" 4K Smart TV |         ['4k', 'smart-tv', 'energy-star', 'flash-deal', 'limited-stock']
+
+(18 rows)
+
+ customer_id | city      | join_date
+-------------+-----------+------------
+        C017 |   Kolkata | 2024-12-18
+        C031 |   Kolkata | 2024-10-15
+        C009 |   Kolkata | 2024-05-03
+        C038 |     Delhi | 2024-11-11
+        C028 |      Pune | 2024-11-14
+        C022 | Bengaluru | 2024-04-05
+        C004 |   Chennai | 2024-09-08
+        C037 | Ahmedabad | 2024-05-25
+        C035 | Hyderabad | 2024-12-04
+        C046 |   Chennai | 2024-11-10
+
+(10 rows)
+Using 11 child processes
+
+Starting copy of flashsaledb.orders with columns [customer_id, order_time, order_id, amount, product_id, quantity].
+Processed: 500 rows; Rate:    4542 rows/s; Avg. rate:    4542 rows/s
+500 rows exported to 1 files in 0.190 seconds.
+Using 11 child processes
+
+Starting copy of flashsaledb.archived_orders with columns [customer_id, order_time, order_id, amount, product_id, quantity].
+Processed: 500 rows; Rate:     789 rows/s; Avg. rate:    1192 rows/s
+500 rows imported from 1 files in 0.420 seconds (0 skipped).
+prathith_rao@Prathith:~$ docker cp "/mnt/c/Users/Prathith Rao/Downloads/analysis_queries.cql" cass-lab
+:/analysis_quesries.cql
+Successfully copied 13.5kB (transferred 15.4kB) to cass-lab:/analysis_quesries.cql
+prathith_rao@Prathith:~$ docker exec -it cass-lab cqlsh -f /flashsale_dataset.cql
+/flashsale_dataset.cql:70:Invalid syntax at line 2, char 123
+/flashsale_dataset.cql:70:  INSERT INTO Products (product_id, name, category, price, stock_qty, tags) VALUES (d446818f-568d-4e31-93f4-f242832a2dac, 'H&M Oversized Tee', 'Clothing', 999, 191, ['casual', 'unisex', 'cotton']);
+/flashsale_dataset.cql:70:                                                                                                                            ^
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 14 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 14 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 16 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 19 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 16 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 15 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 20 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 15 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 16 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 16 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 14 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 18 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 15 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 15 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+Warnings :
+Unlogged batch covering 17 partitions detected against table [flashsaledb.orders]. You should use a logged batch for atomicity, or asynchronous writes for performance.
+
+
+ count
+-------
+    18
+
+(1 rows)
+
+Warnings :
+Aggregation query used without partition key
+
+
+ count
+-------
+  1000
+
+(1 rows)
+
+Warnings :
+Aggregation query used without partition key
+
+
+ code     | discount_pct | valid_for   | seconds_remaining
+----------+--------------+-------------+-------------------
+  FLASH10 |           10 | Electronics |              3599
+ BEAUTY10 |           10 |      Beauty |              5399
+   DEAL15 |           15 |    Footwear |              7199
+   BOOK50 |           50 |       Books |              3599
+   SAVE20 |           20 |    Clothing |              3599
+    TOY20 |           20 |        Toys |              3599
+   MEGA30 |           30 |         All |              3599
+  EXTRA25 |           25 |  Appliances |              1799
+
+(8 rows)
+
+ customer_id | total_orders
+-------------+--------------
+        C017 |           12
+        C031 |           12
+        C009 |           16
+        C038 |           16
+        C028 |           24
+        C022 |           22
+        C004 |           22
+        C037 |           18
+        C035 |           14
+        C046 |           12
+
+(10 rows)
+
+ customer_id | order_time                      | amount
+-------------+---------------------------------+--------
+        C001 | 2025-08-15 12:58:47.000000+0000 |   3598
+        C001 | 2025-08-15 12:58:47.000000+0000 |   3598
+        C001 | 2025-08-15 12:52:19.000000+0000 | 194997
+        C001 | 2025-08-15 12:52:19.000000+0000 | 194997
+        C001 | 2025-08-15 12:42:09.000000+0000 |  13998
+        C001 | 2025-08-15 12:42:09.000000+0000 |  13998
+        C001 | 2025-08-15 12:34:38.000000+0000 |  12999
+        C001 | 2025-08-15 12:34:38.000000+0000 |  12999
+        C001 | 2025-08-15 12:33:44.000000+0000 |   1197
+        C001 | 2025-08-15 12:33:44.000000+0000 |   1197
+        C001 | 2025-08-15 11:52:50.000000+0000 |   2998
+        C001 | 2025-08-15 11:52:50.000000+0000 |   2998
+        C001 | 2025-08-15 11:14:54.000000+0000 |   1499
+        C001 | 2025-08-15 11:14:54.000000+0000 |   1499
+        C001 | 2025-08-15 11:09:53.000000+0000 |  64999
+        C001 | 2025-08-15 11:09:53.000000+0000 |  64999
+        C001 | 2025-08-15 10:53:48.000000+0000 |  14997
+        C001 | 2025-08-15 10:53:48.000000+0000 |  14997
+        C001 | 2025-08-15 10:33:44.000000+0000 |  11997
+        C001 | 2025-08-15 10:33:44.000000+0000 |  11997
+
+(20 rows)
+
+ name               | price | stock_qty | tags
+--------------------+-------+-----------+--------------------------------------------------------------------------
+    Apple iPhone 15 | 89999 |        91 |          ['smartphone', 'premium', 'ios', 'flash-deal', 'limited-stock']
+   boAt Rockerz 450 |  1799 |       113 |                                          ['audio', 'wireless', 'budget']
+    Sony WH-1000XM5 | 29999 |       182 |      ['audio', 'noise-cancel', 'premium', 'flash-deal', 'limited-stock']
+         OnePlus 12 | 64999 |       136 | ['smartphone', 'flagship', 'fast-charge', 'flash-deal', 'limited-stock']
+ Samsung Galaxy S24 | 79900 |       117 |        ['smartphone', 'bestseller', '5g', 'flash-deal', 'limited-stock']
+
+(5 rows)
+
+ name                         | tags
+------------------------------+--------------------------------------------------------------------------
+              Apple iPhone 15 |          ['smartphone', 'premium', 'ios', 'flash-deal', 'limited-stock']
+             boAt Rockerz 450 |                                          ['audio', 'wireless', 'budget']
+                    Puma RS-X |                                            ['casual', 'colorful', 'men']
+            Zara Floral Dress |                                            ['women', 'summer', 'floral']
+               Nerf Elite 2.0 |                                       ['kids', 'outdoor', 'ages-8-plus']
+             LEGO Technic Set |                                             ['kids', 'stem', 'building']
+              Sony WH-1000XM5 |      ['audio', 'noise-cancel', 'premium', 'flash-deal', 'limited-stock']
+                   OnePlus 12 | ['smartphone', 'flagship', 'fast-charge', 'flash-deal', 'limited-stock']
+           Samsung Galaxy S24 |        ['smartphone', 'bestseller', '5g', 'flash-deal', 'limited-stock']
+  Samsung 8kg Washing Machine |                                      ['home', 'inverter', 'energy-star']
+             Nike Air Max 270 |                                            ['sports', 'trending', 'men']
+         Harry Potter Box Set |                                    ['fiction', 'fantasy', 'collectible']
+        Nivea Men Body Lotion |                                             ['skincare', 'men', 'daily']
+         Adidas Ultraboost 23 |                                         ['running', 'premium', 'unisex']
+ Maybelline Fit Me Foundation |                                          ['makeup', 'women', 'all-skin']
+         Atomic Habits (Book) |                                 ['self-help', 'bestseller', 'paperback']
+            Philips Air Fryer |                                        ['kitchen', 'healthy', 'compact']
+           LG 43" 4K Smart TV |         ['4k', 'smart-tv', 'energy-star', 'flash-deal', 'limited-stock']
+
+(18 rows)
+
+ customer_id | city      | join_date
+-------------+-----------+------------
+        C017 |   Kolkata | 2024-12-18
+        C031 |   Kolkata | 2024-10-15
+        C009 |   Kolkata | 2024-05-03
+        C038 |     Delhi | 2024-11-11
+        C028 |      Pune | 2024-11-14
+        C022 | Bengaluru | 2024-04-05
+        C004 |   Chennai | 2024-09-08
+        C037 | Ahmedabad | 2024-05-25
+        C035 | Hyderabad | 2024-12-04
+        C046 |   Chennai | 2024-11-10
+
+(10 rows)
+Using 11 child processes
+
+Starting copy of flashsaledb.orders with columns [customer_id, order_time, order_id, amount, product_id, quantity].
+Processed: 1000 rows; Rate:    4872 rows/s; Avg. rate:    4872 rows/s
+1000 rows exported to 1 files in 0.281 seconds.
+Using 11 child processes
+
+Starting copy of flashsaledb.archived_orders with columns [customer_id, order_time, order_id, amount, product_id, quantity].
+Processed: 1000 rows; Rate:    1923 rows/s; Avg. rate:    2756 rows/s
+1000 rows imported from 1 files in 0.363 seconds (0 skipped).
